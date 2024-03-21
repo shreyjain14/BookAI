@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block title %}
+  Home
+{% endblock %}
+{% block content %}
+
+    <main class="mt-3">
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+
+                    <h1>Custom Ideas</h1>
+
+                </div>
+            </div>
+
+            {% if title %}
+
+            <div class="mb-3">
+                <label for="audience" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" value="{{ title }}">
+            </div>
+            <div class="mb-3">
+                <label for="audience" class="form-label">Description</label>
+                <input type="text" class="form-control" id="description" value="{{  description }}">
+            </div>
+            <div class="mb-3">
+                <label for="audience" class="form-label">Audience</label>
+                <input type="text" class="form-control" id="audience" value="{{  audience }}">
+            </div>
+
+            {% else %}
+
+            <div class="mb-3">
+                <label for="audience" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title">
+            </div>
+            <div class="mb-3">
+                <label for="audience" class="form-label">Description</label>
+                <input type="text" class="form-control" id="description">
+            </div>
+            <div class="mb-3">
+                <label for="audience" class="form-label">Audience</label>
+                <input type="text" class="form-control" id="audience">
+            </div>
+
+            {% endif %}
+
+            <div class="mb-3">
+                <label for="audience" class="form-label">Language</label>
+                <select class="form-select" aria-label="Languages" disabled>
+                    <option value="English" selected>English</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="French">French</option>
+                    <option value="German">German</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Portuguese">Portuguese</option>
+                    <option value="Dutch">Dutch</option>
+                    <option value="Russian">Russian</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Korean">Korean</option>
+                    <option value="Hindi">Hindi</option>
+                </select>
+            </div>
+
+            <div class="row">
+                <button id="loadIdeas_btn" type="button" onclick="generateStory()" class="btn btn-primary">
+                    Generate Story
+                </button>
+            </div>
+
+            <div class="row">
+
+                <div id="story"></div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="{{url_for('static', filename='js/generate-story.js')}}"></script>
+
+{% endblock %}

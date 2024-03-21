@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}
+  Home
+{% endblock %}
+{% block content %}
+
+    <main class="mt-3">
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+
+                    <h1>Home</h1>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <a type="button" href="{{  url_for('generate_ideas')  }}" role="status" class="btn btn-primary">Generate Ideas</a>
+            </div>
+            <br>
+            <div class="row">
+                <a type="button" href="{{  url_for('custom_ideas')  }}" class="btn btn-primary">Custom Ideas</a>
+            </div>
+
+        </div>
+
+    </main>
+
+{% endblock %}

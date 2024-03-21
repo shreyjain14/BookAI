@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}
+  Home
+{% endblock %}
+
+
+{% block content %}
+
+    <main class="mt-3">
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+
+                    <h1>Generate Ideas</h1>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="mb-3">
+                    <label for="audience" class="form-label">Audience</label>
+                    <input type="text" class="form-control" id="audience">
+                </div>
+            </div>
+
+            <div class="row">
+                <button id="loadIdeas_btn" onclick="loadIdeas()" class="btn btn-primary">Generate Ideas</button>
+            </div>
+
+            <div class="row">
+                <p></p>
+            </div>
+
+            <div class="row">
+                <br>
+                <div class="row" id="ideas_table"></div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="{{url_for('static', filename='js/generate-ideas.js')}}"></script>
+
+{% endblock %}
